@@ -331,21 +331,134 @@ h1,h2,h3,.event h3,.count-title,.final-note{
   .couple-names .parent-name{font-size:12.5px}
   .couple-names .couple-and{width:40px;height:40px;font-size:22px;margin:14px auto 7px}
 }
+
+/* COVER V2 — spacious, elegant opening */
+.cover-content{
+  width:min(720px,92vw);
+  min-height:72vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:42px 24px 52px;
+}
+.cover-crescent{
+  font-size:52px;
+  line-height:1;
+  color:#f2cf87;
+  text-shadow:0 0 18px rgba(255,225,155,.7),0 0 42px rgba(201,164,91,.25);
+  margin-bottom:22px;
+  animation:softMoon 3.5s ease-in-out infinite;
+}
+.cover-bismillah{
+  color:#f3d28e;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(25px,6.5vw,42px);
+  line-height:1.6;
+  text-shadow:0 0 16px rgba(255,220,145,.45);
+  direction:rtl;
+  white-space:nowrap;
+}
+.cover-divider{
+  width:min(300px,70vw);
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin:17px auto 26px;
+  color:#eac67e;
+}
+.cover-divider:before,.cover-divider:after{
+  content:"";
+  height:1px;
+  flex:1;
+  background:linear-gradient(90deg,transparent,#c9a45b,transparent);
+}
+.cover-kicker{
+  color:#f1d9b0;
+  font-size:clamp(12px,3.2vw,16px);
+  font-weight:700;
+  letter-spacing:3px;
+  line-height:1.8;
+  text-transform:uppercase;
+}
+.cover-invite{
+  margin-top:25px;
+  color:#fff2dc;
+  font-family:"Cormorant Garamond","Baskerville","Times New Roman",serif;
+  font-size:clamp(30px,7vw,48px);
+  font-weight:700;
+  letter-spacing:.5px;
+  text-shadow:0 0 18px rgba(255,240,210,.2);
+}
+.cover-sub{
+  margin-top:5px;
+  color:#ead9c5;
+  font-family:"Cormorant Garamond","Baskerville","Times New Roman",serif;
+  font-size:clamp(16px,4vw,22px);
+  font-style:italic;
+}
+.cover-open-btn{
+  margin-top:34px;
+  min-width:min(330px,80vw);
+  padding:18px 34px;
+  font-size:clamp(16px,4vw,20px);
+  font-weight:800;
+  letter-spacing:.6px;
+  border-width:1.5px;
+  box-shadow:0 0 25px rgba(201,164,91,.3),0 0 70px rgba(201,164,91,.12),inset 0 0 20px rgba(201,164,91,.09);
+  animation:coverButtonGlow 2.8s ease-in-out infinite;
+}
+.cover-hint{
+  margin-top:14px;
+  color:rgba(234,217,197,.65);
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+@keyframes coverButtonGlow{
+  50%{box-shadow:0 0 38px rgba(201,164,91,.48),0 0 90px rgba(201,164,91,.17),inset 0 0 24px rgba(201,164,91,.12)}
+}
+@media(max-width:520px){
+  .cover-content{min-height:78vh;padding-top:30px}
+  .cover-bismillah{font-size:25px}
+  .cover-crescent{font-size:45px}
+  .cover-invite{margin-top:20px}
+  .cover-open-btn{margin-top:28px}
+}
+
+/* FINAL CLOSING ALIGNMENT */
+section:last-of-type{min-height:auto;padding-top:48px;padding-bottom:55px}
+section:last-of-type .wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0}
+section:last-of-type .card{margin:0 auto!important;padding:34px 22px!important;max-width:760px;width:min(100%,760px)}
+.final-note{margin:0 0 8px!important;text-align:center;line-height:1.3}
+.final-note strong{font-size:24px!important;line-height:1.3}
+.final-names{margin:0 auto!important;text-align:center;line-height:1.55!important;font-size:18px!important}
+.final-dua{margin-top:14px!important;text-align:center;line-height:1.55}
+.final-dua + .ornamental-crescent{margin-top:16px!important}
+@media(max-width:520px){
+  section:last-of-type{padding-top:36px;padding-bottom:42px}
+  section:last-of-type .card{padding:28px 18px!important}
+  .final-note strong{font-size:21px!important}
+  .final-names{font-size:16px!important}
+}
 </style>
 </head>
 <body>
 <div class="grand-hearts" id="grandHearts" aria-hidden="true"></div>
 
+
 <div class="opening-screen opening-grand" id="openingScreen">
-  <div class="opening-content">
-    <div class="opening-seal">❈</div>
-    <div class="kicker">A beautiful beginning</div>
-    <div class="opening-title">We Joyfully Invite</div>
-    <div class="divider"></div>
-    <p class="opening-sub">You are warmly invited</p>
-    <button class="open-btn" id="openInvite">With Love, We Invite You ✦</button>
+  <div class="opening-content cover-content">
+    <div class="cover-crescent">☾</div>
+    <div class="cover-bismillah" lang="ar">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+    <div class="cover-divider"><span>✦</span></div>
+    <div class="cover-kicker">With the blessings of Allah<br>&amp; our beloved families</div>
+    <div class="cover-invite">We joyfully invite you</div>
+    <div class="cover-sub">to celebrate a beautiful beginning</div>
+    <button class="open-btn cover-open-btn" id="openInvite">✦ TAP TO OPEN ✦</button>
   </div>
 </div>
+
 <div class="flower-field" aria-hidden="true">
   <span class="petal" style="left:7%;animation-duration:10s;animation-delay:-2s"></span>
   <span class="petal" style="left:18%;animation-duration:13s;animation-delay:-7s"></span>
@@ -446,11 +559,6 @@ h1,h2,h3,.event h3,.count-title,.final-note{
 
 <section>
   <div class="wrap">
-    <div class="card rsvp scroll-reveal">
-      <div class="rsvp-title">We would be honoured by your presence</div>
-      <p>Kindly confirm your attendance and celebrate this beautiful beginning with us.</p>
-      <a class="btn" href="javascript:void(0)">♡ RSVP</a>
-    </div>
     <div class="card scroll-reveal">
       <div class="final-note"><strong>Together with our families</strong></div>
       <div class="final-names" style="font-size:22px">We invite you to celebrate this blessed beginning with us.</div>
